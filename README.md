@@ -28,17 +28,15 @@ each line. An event is a comma-separated row with the following form:
 
   - `<LABEL>` is the name of the event. Choose anything that is meaningful.
   There are two types of events:
-    - *Momentary* events, which occur at some moment in time. For example,
-    "processor 0 wrote to location X" could be a reasonable momentary event.
+    - *Momentary* events, which occur at some moment in time.
     - *Duration* events, which begin at some moment and end at another.
     These are identified by pairs of events whose labels end in `_ENTER` and
     `_LEAVE`. For each `<LABEL>_ENTER`, the next `<LABEL>_LEAVE` that appears on
-    the same processor will be used as the end of that event. Note that
-    duration events can overlap.
+    the same processor will be used as the end of that event.
   - `<PROC>` is a number (0 through N-1 for N processors) identifying the
   processor that logged the event.
-  - `<TIME>` is the time of the event, in seconds. These times do not have to
-  start at 0; everything will be listed relative to the earliest time that
-  appears in the trace.
+  - `<TIME>` is the time the event occurs, in seconds.
+  Times do not have to start at 0; everything will be listed relative to the
+  earliest time that appears in the trace.
   - `<ARG1>`,`<ARG2>`, and `<ARG3>` can be anything useful that you would like
   to additionally include in the event.
